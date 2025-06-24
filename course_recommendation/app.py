@@ -449,7 +449,11 @@ def register():
     session.commit()
     session.close()
 
-    return jsonify({"message": "User registered successfully"}), 201
+    return jsonify({
+        "message": "User registered successfully",
+        "register": True
+    }), 201
+
 
 
 @app.route('/login', methods=['POST'])
